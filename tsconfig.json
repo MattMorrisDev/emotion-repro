@@ -1,25 +1,52 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "downlevelIteration": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "preserve",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
     "module": "esnext",
     "moduleResolution": "node",
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "outDir": "build/dist",
+    "rootDir": ".",
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "target": "es5",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": false,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "preserve"
+    "types": [
+      "@emotion/core",
+      "jest"
+    ]
   },
   "include": [
-    "src"
-  ]
+    "src",
+    "node_modules/cypress/**/*"
+  ],
+  "exclude": [
+    "acceptance-tests",
+    "build",
+    "jest",
+    "node_modules",
+    "scripts",
+    "src/setupTests.ts",
+    "webpack"
+  ],
+  "types": [
+    "typePatches"
+  ],
+  "extends": "./tsconfig.absolute-paths.json"
 }

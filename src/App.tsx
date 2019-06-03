@@ -1,26 +1,42 @@
+import {css} from '@emotion/core';
+import styled from '@emotion/styled';
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import 'src/App.css';
 
-const App: React.FC = () => {
+const createStyledDiv = styled.div;
+const extendStyled = styled;
+
+const StyledDiv = styled.div({
+  color: 'green',
+});
+
+const StyledDivViaAlias = createStyledDiv({
+  color: 'blue',
+});
+
+const ExtendedStyledDiv = extendStyled(StyledDiv)({
+  color: 'red',
+});
+
+
+const App: React.SFC = () => {
   return (
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      {/* Sourcemaps work here*/}
+      <StyledDiv>StyledDiv</StyledDiv>
+
+      {/* Sourcemaps DO NOT work here*/}
+      <StyledDivViaAlias>StyledDivViaAlias</StyledDivViaAlias>
+
+      {/* Sourcemaps work here*/}
+      <ExtendedStyledDiv>ExtendedStyledDivViaAlias</ExtendedStyledDiv>
+
+      {/* Sourcemaps work here*/}
+      <div css={css({color: 'purple'})}>inline css prop</div>
     </div>
   );
-}
+};
 
 export default App;
