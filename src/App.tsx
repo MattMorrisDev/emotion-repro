@@ -1,4 +1,3 @@
-import {css} from '@emotion/core';
 import styled from '@emotion/styled';
 import React from 'react';
 import 'src/App.css';
@@ -34,7 +33,7 @@ const App: React.SFC = () => {
       <ExtendedStyledDiv>ExtendedStyledDivViaAlias</ExtendedStyledDiv>
 
       {/* Sourcemaps work here*/}
-      <div css={css({color: 'purple'})}>inline css prop</div>
+      <div css={{color: 'purple'}}>inline css prop</div>
     </div>
   );
 };
